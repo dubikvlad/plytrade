@@ -57,4 +57,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+input {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 /*# sourceMappingURL=reset.css.map */

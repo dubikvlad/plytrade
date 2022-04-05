@@ -13,12 +13,14 @@
         <div class="container ">
             <div class="header">
                 <div class="header__logo">
-                    <img class="header__logo__img" src="img/logo.png" alt="Политотрейд">
+                    <a href="#">
+                        <img class="header__logo__img" src="img/logo.png" alt="Политотрейд">
+                    </a>
                 </div>
                 <div class="header__menu">
                     <ul class="header__menuList">
                         <li class="header__menuItem">
-                            <a href="#" class="header__menuItemLink active">Наши услуги</a>
+                            <a href="production" class="header__menuItemLink">Наши услуги</a>
                         </li>
                         <li class="header__menuItem">
                             <a href="#" class="header__menuItemLink">Наши проекты</a>
@@ -58,7 +60,7 @@
                     <br> теплый, уютный дом для себя, своих детей и внуков? 
                     <br> Тебе очень повезло!
                 </p>
-                <a href="#" class="banner__bigButton">
+                <a href="#feedback" class="banner__bigButton">
                     хочу дом!
                 </a>
             </div>
@@ -157,7 +159,7 @@
                             </div>
                             
                         </div>
-                        <div class="quality__block">
+                        <div class="quality__block quality__preview">
                             <img src="img/house.png" alt="дом" class="quality__block__img">
                         </div>
                     </div>
@@ -192,14 +194,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="Slice blockName">
-                    <h3 class="blockName__title lightGreyTitle">
+                <div class="Slice blockName lightGreyTitle">
+                    <h3 class="blockName__title">
                         Наши услуги
                     </h3>
                 </div>
                 <div class="Slice services">
                     <div class="services__block">
-                        <div class="services__card">
+                        <a href="#production"" class="services__card">
                             <div class="services__head">
                                 <h4>Коробка дома</h4>
                                 <span class="razdel">|</span>
@@ -216,11 +218,11 @@
                             <div class="services__price">
                                 <span>от</span> <span >900</span> р/м<sup>2</sup>
                             </div>
-                            <div class="services__button">
+                            <div class="services__card__button">
                                 заказать
                             </div>
-                        </div>
-                        <div class="services__card">
+                        </a>
+                        <a href="#production" class="services__card">
                             <div class="services__head">
                                 <h4>Фундамент,
                                     коробка, крыша</h4>
@@ -243,13 +245,13 @@
                             <div class="services__price">
                                 <span>от</span> <span >1900</span> р/м<sup>2</sup>
                             </div>
-                            <div class="services__button">
+                            <div class="services__card__button">
                                 заказать
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="services__block">
-                        <div class="services__card">
+                        <a href="#production" class="services__card">
                             <div class="services__head">
                                 <h4>Под ключ</h4>
                                 <span class="razdel">|</span>
@@ -276,17 +278,94 @@
                             <div class="services__price">
                                 <span>от</span> <span >1900</span> р/м<sup>2</sup>
                             </div>
-                            <div class="services__button">
+                            <div class="services__card__button">
                                 заказать
+                            </div>
+                        </a>
+                        <a class="services__button" href="#feedback">
+                            оставить заявку
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="Slice blockName lightGreyTitle blockName-gallery">
+                    <h3 class="blockName__title">
+                        Отзывы наших клиентов
+                    </h3>
+                </div>
+                <div class="Slice gallery">
+                    <div class="gallery__slider">
+                        <div class="gallery__item">
+                            <div class="gallery__picture">
+                                <img src="img/person.jpg" alt="" class="gallery__picture__img">
+                            </div>
+                            <div class="gallery__info">
+                                <span class="gallery__info__name">Имя клинта</span>
+                                <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            </div>
+                        </div>
+                        <div class="gallery__item">
+                            <div class="gallery__picture">
+                                <img src="img/person.jpg" alt="" class="gallery__picture__img">
+                            </div>
+                            <div class="gallery__info">
+                                <span class="gallery__info__name">Имя клинта</span>
+                                <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            </div>
+                        </div>
+                        <div class="gallery__item">
+                            <div class="gallery__picture">
+                                <img src="img/person.jpg" alt="" class="gallery__picture__img">
+                            </div>
+                            <div class="gallery__info">
+                                <span class="gallery__info__name">Имя клинта</span>
+                                <a href="" class="gallery__info__link">смотреть видео отзыв</a>
                             </div>
                         </div>
                     </div>
+                    <div class="gallery__dots">
+                        <class class="gallery__dot"></class>
+                        <class class="gallery__dot active"></class>
+                        <class class="gallery__dot"></class>
+                    </div>
                 </div>
+               
             </div>
         </div>
     </main>
     <footer>
         <div class="container">
+            <div class="Slice blockName darkTitle feedbackTitle">
+                <h3 class="blockName__title">
+                    Нужна наша помощь?
+                </h3>
+                <span class="blockName__secondary">
+                    Заполняй заявку и мы поможем подобрать 
+наиболее подходящее решение.
+                </span>
+            </div>
+            <div class="Slice feedback" id="feedback">
+                <div class="feedback__block">
+                    <div class="feedback__picture">
+                        <img src="img/hose3.png" alt="дом" class="feedback__picture__img">
+                    </div>
+                    <form action="feedback" class="feedback__form">
+                        <div class="input__wrapper input__wrapper__name">
+                            <input type="text" name="name" id="name" class="feedback__input" placeholder="Введите имя">
+                        </div>
+                        <div class="input__wrapper input__wrapper__tel">
+                            <input type="tel" name="tel" id="tel" class="feedback__input" placeholder="Введите номер телефона">
+                        </div>
+                        <div class="input__wrapper input__wrapper__mail">
+                            <input type="email" name="eamil" id="email" class="feedback__input" placeholder="Введите e-mail">
+                        </div>
+                        <button type="submit" class="feedback__submit">оставить заявку</button>
+                    </form>
+                </div>
+                <div class="feedback__block">
+                    <span class="feedback__property">*в ближайшее время мы свяжемся с вами</span>
+                </div>
+            </div>
             <div class="Slice footer">
                 <div class="footer__info">
                     <img src="img/logo.png" alt="" class="footer__logo">
