@@ -393,6 +393,9 @@ header {
         background: #383735;
         box-shadow: 0px 4px 7px rgba(37, 209, 106, 0.76);
     }
+    &.thin {
+        padding: 35px 0;
+    }
 }
 
 .blockName__title {
@@ -458,6 +461,19 @@ header {
 
     display: flex;
     align-items: center;
+    span {
+        padding-left: 15px;
+    }
+}
+
+.quality__description__picture {
+    height: 55px;
+    width: 55px;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 .quality__description__text {
@@ -1189,6 +1205,146 @@ header {
     background-color: $green;
     margin: 0 10px;
 }
+
+.examples {
+    padding: 98px 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.examples__galery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -20px -25px;
+}
+
+.examples__card {
+    width: 360px;
+    height: 360px;
+    margin: 20px 25px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    &:hover {
+        .examples__heading {
+            left: 0;
+        }
+        filter: drop-shadow(-1px -1px 11px rgba(37, 209, 106, 0.76));
+    }
+    cursor: pointer;
+}
+
+.examples__card__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.examples__heading {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    color: $green;
+    width: 100%;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+    transition: 0.3s;
+}
+
+.examples__eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0px 40px;
+    height: 48px;
+    width: 71px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.examples__card__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 9.5px 32.5px;
+    border-radius: 40px 0px;
+    background-color: $green;
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 123.5%;
+    /* or 27px */
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.examples__button {
+    margin-top: 90px;
+    border-radius: 0px 15px;
+    background-color: $green;
+    color: #fff;
+    cursor: pointer;
+    padding: 20px 40px;
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 123.5%;
+    /* or 27px */
+
+    text-transform: uppercase;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
