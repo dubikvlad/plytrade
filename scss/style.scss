@@ -1,8 +1,13 @@
-$green: rgba(73, 215, 66, 0.85);;
-
+$green: rgba(73, 215, 66, 0.85);
+$Libre: 'Libre Franklin';
+$Benjamin: 'Benjamin Franklin';
+$Chalkboard: 'Chalkboard SE';
+$Hepta: 'Hepta Slab';
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 @font-face {
     font-family: "Helvetica";
@@ -10,10 +15,55 @@ $green: rgba(73, 215, 66, 0.85);;
     font-weight: 400;
     /* Браузер сначала попробует найти шрифт локально */
     src: local("Helvetica"),
-         /* Если не получилось, загрузит woff2 */
          url("/assets/fonts/helvetica_regular.otf") format("otf"),
-
 }
+
+@font-face {
+    font-family: 'Benjamin Franklin';
+    font-style: normal;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Benjamin Franklin"),
+         url("/assets/fonts/BenjaminFranklin.ttf") format("ttf"),
+}
+
+@font-face {
+    font-family: 'Chalkboard SE';
+    font-style: normal;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Benjamin Franklin"),
+         url("/assets/fonts/ChalkboardSE.otf") format("otf"),
+}
+
+
+@font-face {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Libre Franklin"),
+         url("/assets/fonts/libre-franklin/librefranklin-regular.ttf") format("otf"),
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 500;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Libre Franklin"),
+         url("/assets/fonts/libre-franklin/librefranklin-bold.ttf") format("otf"),
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: bold;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Libre Franklin"),
+         url("/assets/fonts/libre-franklin/librefranklin-extrabold.ttf") format("otf"),
+}
+
+
+
 
 @keyframes slideme {
     0% {
@@ -200,7 +250,7 @@ header {
 }
 
 .banner__text {
-    font-family: 'Raleway';
+    font-family: $Libre;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -220,7 +270,7 @@ header {
     overflow: hidden;
 
     margin-top: 40px;
-    font-family: 'Raleway';
+    font-family: $Chalkboard;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -376,6 +426,11 @@ header {
     flex-direction: column;
     min-height: 211px;
     justify-content: center;
+
+    font-family: 'Benjamin Franklin';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
 }
 
 .darkTitle {
@@ -391,8 +446,19 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #383735;
-        box-shadow: 0px 4px 7px rgba(37, 209, 106, 0.76);
+        background: #362706;
+        
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        margin-left: -50vw;
+        box-shadow: 0px 4px 7px rgba(144, 228, 92, 0.76);
     }
     &.thin {
         padding: 35px 0;
@@ -400,7 +466,7 @@ header {
 }
 
 .blockName__title {
-    font-family: 'Raleway';
+    font-family: $Benjamin;
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -408,7 +474,7 @@ header {
 }
 
 .blockName__secondary {
-    font-family: 'Raleway';
+    font-family: $Hepta;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -419,6 +485,17 @@ header {
 .quality {
     flex-direction: column;
     padding: 80px 0;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        margin-left: -50vw;
+        background: #FFF8E4;
+    }
 }
 
 .quality__item {
@@ -502,14 +579,14 @@ header {
     margin-top: 15px;
     transition: 0.3s;
     width: fit-content;
+    color: $green;
     &:hover {
         color: $green;
-        text-decoration: underline
-        ;
+        text-decoration: underline;
     }
 }
 
-.greyTitle {
+.simpleTitle {
     color: #000000;
     &::before {
         content: "";
@@ -520,7 +597,7 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #C4C4C4;
+        background: #F1E2C0;
     }
 }
 
@@ -536,7 +613,7 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #F1EFEA;
+        background: #FFF9EB;
     }
 }
 
@@ -591,25 +668,29 @@ header {
     align-items: center;
     justify-content: center;
     margin: 32px;
-    background: #E1E0DD;
+    background: #F1E2C0;
     opacity: 0.45;
     border: 1px solid #000000;
     border-radius: 0px 15px;
     height: 70px;
     max-width: 446px;
     
-    font-family: 'Raleway';
+    font-family: 'Chalkboard SE';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
     line-height: 171%;
-    text-align: center;
+
+    transition: 0.3s;
 
     &.active {
         color: $green;
-        background-color: #383735;
+        background-color: #41352A;
         opacity: 1;
         box-shadow: 0px 0px 17px rgba(37, 209, 106, 0.9);
+
+        font-size: 33px;
+        line-height: 171%;
     }
 
     @media screen and(max-width: 875px) {
@@ -617,7 +698,7 @@ header {
     }
 }
 
-.lightGreyTitle {
+.lightSimpleTitle {
     &::before {
         content: "";
         position: absolute;
@@ -627,7 +708,7 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #E0DFDD;
+        background: #F1E2C0;
     }
 }
 
@@ -645,7 +726,7 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #C4C4C4;
+        background: #FFF8E4;
     }
 }
 
@@ -763,6 +844,16 @@ header {
     padding: 22px 0;
     margin-top: 57px;
     text-transform: uppercase;
+
+    background: #F1E2C0;
+    border-radius: 15px;
+
+    font-family: 'Chalkboard SE';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 123.5%;    
+
     @media screen and(max-width:875px) {
         margin-top: 20px;
     }
@@ -778,6 +869,17 @@ header {
 
 .gallery {
     flex-direction: column;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        margin-left: -50vw;
+        background: #FFF8E4;
+    }
 }
 
 .gallery__slider {
@@ -891,7 +993,7 @@ header {
         width: 100vw;
         height: 100%;
         margin-left: -50vw;
-        background: #E0DFDD;
+        background: #FFF5D9;
     }
 }
 
@@ -937,7 +1039,8 @@ header {
 .input__wrapper {
     position: relative;
     color: #000000;
-    &:before {
+    &:before,
+    &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -949,26 +1052,26 @@ header {
 }
 
 .input__wrapper__name {
-    &::before {
+    &::after {
         background: url('/img/icon_name.svg') no-repeat;
     }
 }
 
 .input__wrapper__tel {
-    &::before {
+    &::after {
         background: url('/img/icon_tel.svg') no-repeat;
     }
 }
 
 .input__wrapper__mail {
-    &::before {
+    &::after {
         background: url('/img/icon_mail.svg') no-repeat;
     }
 }
 
 .feedback__input {
     margin-bottom: 44px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     border: none;
 
@@ -1240,7 +1343,7 @@ header {
     box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.08);
     border-radius: 0px 40px;
 
-    font-family: 'Libre Franklin';
+    font-family: $Libre;
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
@@ -1253,7 +1356,7 @@ header {
 }
 
 .examples__title {
-    font-family: 'Benjamin Franklin';
+    font-family: $Benjamin;
     display: block;
     font-style: normal;
     font-weight: 400;
@@ -1323,7 +1426,7 @@ header {
         padding-left: 31px;
         padding-bottom: 15px;
 
-        font-family: 'Chalkboard SE';
+        font-family: $Chalkboard;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -1403,7 +1506,7 @@ sup {
     border-radius: 40px 0px;
     background-color: $green;
 
-    font-family: 'Raleway';
+    font-family: $Chalkboard;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -1421,7 +1524,7 @@ sup {
     cursor: pointer;
     padding: 20px 40px;
 
-    font-family: 'Raleway';
+    font-family: $Chalkboard;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
