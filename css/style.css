@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 400;
   /* Браузер сначала попробует найти шрифт локально */
-  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-regular.ttf") format("otf");
+  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-regular.ttf") format("ttf");
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   font-style: normal;
   font-weight: 500;
   /* Браузер сначала попробует найти шрифт локально */
-  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-bold.ttf") format("otf");
+  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-bold.ttf") format("ttf");
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   font-style: normal;
   font-weight: bold;
   /* Браузер сначала попробует найти шрифт локально */
-  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-extrabold.ttf") format("otf");
+  src: local("Libre Franklin"), url("/assets/fonts/libre-franklin/librefranklin-extrabold.ttf") format("ttf");
 }
 
 @-webkit-keyframes slideme {
@@ -80,7 +80,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   background: rgba(252, 247, 238, 0.53);
   -webkit-backdrop-filter: blur(14px);
           backdrop-filter: blur(14px);
@@ -218,7 +218,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Chalkboard SE", sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
@@ -338,7 +338,16 @@ header {
   padding: 11px 60px;
 }
 
-.banner__bigButton:after {
+.banner__bigButton,
+.intro__text__button,
+.feedback__submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner__bigButton:after,
+.intro__text__button:after,
+.feedback__submit:after {
   margin-left: -30px;
   content: " ";
   width: 30px;
@@ -432,7 +441,7 @@ header {
 }
 
 .intro__text__title {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
@@ -441,7 +450,7 @@ header {
 }
 
 .intro__text__button {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 23px;
@@ -487,7 +496,7 @@ header {
 }
 
 .middleContent__title {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
@@ -524,6 +533,26 @@ header {
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
+}
+
+.blockname__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  font-family: "Libre Franklin";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.blockname__tab {
+  margin-right: 20px;
+  padding: 8px 15px;
+  background-color: rgba(73, 215, 66, 0.85);
+  border-radius: 0px 5px;
 }
 
 .darkTitle {
@@ -639,6 +668,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Libre Franklin";
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -654,11 +684,10 @@ header {
 }
 
 .quality__description__title {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 24px;
+  line-height: 29px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,17 +708,18 @@ header {
 .quality__description__picture img {
   height: 100%;
   width: 100%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .quality__description__text {
   margin-top: 20px;
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .quality__block__img {
@@ -701,7 +731,7 @@ header {
 }
 
 .quality__description__link {
-  font-family: 'Roboto';
+  font-family: "Chalkboard SE";
   margin-top: 15px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -730,6 +760,117 @@ header {
   height: 100%;
   margin-left: -50vw;
   background: #F1E2C0;
+}
+
+.techologies {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 72px 0;
+}
+
+.technologies__into {
+  margin-bottom: 70px;
+  font-style: normal;
+  font-family: "Libre Franklin";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 134%;
+}
+
+.technologies__patrs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.technologies__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.technologies__item:last-child {
+  margin-bottom: 0;
+}
+
+.technologies__item:nth-child(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.technologies__item:nth-child(2n) .technologies__picture {
+  border-radius: 0px 89px 0px 0px;
+}
+
+.technologies__item .item__title {
+  width: 100%;
+  position: relative;
+  background: rgba(241, 226, 192, 0.5);
+  border-radius: 0px 30px;
+  padding: 44px 47px 65px;
+  font-family: "Benjamin Franklin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.technologies__item .item__title__subtitle {
+  position: absolute;
+  bottom: -30px;
+  left: 56px;
+  padding: 14px 33px 16px;
+  background-color: rgba(73, 215, 66, 0.85);
+  border-radius: 0px 30px;
+  font-family: "Chalkboard SE";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.technologies__description {
+  -webkit-box-flex: 0.57;
+      -ms-flex: 0.57;
+          flex: 0.57;
+}
+
+.technologies__description .quality__description {
+  margin-right: 0;
+}
+
+.technologies__descriptionText {
+  margin-top: 76px;
+}
+
+.technologies__picture {
+  -webkit-box-flex: 0.35;
+      -ms-flex: 0.35;
+          flex: 0.35;
+  height: auto;
+  margin-top: 40px;
+  border-radius: 89px 0px 0px 0px;
+  overflow: hidden;
+}
+
+.technologies__picture__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .processing {
@@ -835,6 +976,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
   margin: 32px;
   background: #F1E2C0;
   opacity: 0.45;
@@ -846,9 +988,12 @@ header {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  line-height: 171%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.processing__links__link.last-active {
+  opacity: 1;
 }
 
 .processing__links__link.active {
@@ -858,7 +1003,6 @@ header {
   -webkit-box-shadow: 0px 0px 17px rgba(37, 209, 106, 0.9);
           box-shadow: 0px 0px 17px rgba(37, 209, 106, 0.9);
   font-size: 33px;
-  line-height: 171%;
 }
 
 @media screen and (max-width: 875px) {
@@ -955,7 +1099,7 @@ header {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -978,7 +1122,7 @@ header {
 }
 
 .services__list {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -991,7 +1135,7 @@ header {
 }
 
 .services__price {
-  font-family: 'Roboto';
+  font-family: "Chalkboard SE";
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -1077,19 +1221,7 @@ header {
 }
 
 .gallery__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-top: -110px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-@media screen and (max-width: 875px) {
-  .gallery__slider {
-    margin-top: 60px;
-  }
 }
 
 .gallery__item {
@@ -1103,10 +1235,11 @@ header {
   border-radius: 33px;
   overflow: hidden;
   max-width: 340px;
+  background-color: #fff;
 }
 
 .gallery__picture {
-  width: 100%;
+  width: auto;
   height: 264px;
 }
 
@@ -1131,7 +1264,7 @@ header {
 }
 
 .gallery__info__name {
-  ont-family: 'Raleway';
+  ont-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -1140,7 +1273,7 @@ header {
 }
 
 .gallery__info__link {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1152,36 +1285,6 @@ header {
   padding: 7px 0;
   border-radius: 19px;
   background-color: rgba(73, 215, 66, 0.85);
-}
-
-.gallery__dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-  padding: 58px 0 53px;
-}
-
-.gallery__dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #C0BEBA;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.gallery__dot.active {
-  background: rgba(73, 70, 67, 0.46);
 }
 
 .feedbackTitle {
@@ -1253,13 +1356,15 @@ header {
   border-radius: 0px 89px 0px 0px;
   overflow: hidden;
   margin-top: -130px;
-  padding-right: 120px;
+  margin-right: 120px;
+  max-height: 599px;
+  max-width: 434px;
 }
 
 @media screen and (max-width: 875px) {
   .feedback__picture {
     margin-top: 0;
-    padding-right: 0;
+    margin-right: 0;
     width: 100%;
     max-width: 434px;
   }
@@ -1323,7 +1428,7 @@ header {
   border-radius: 20px;
   border: none;
   padding: 21px 10px 16px 70px;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -1345,7 +1450,7 @@ header {
 
 .feedback__submit {
   border-radius: 20px;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -1358,7 +1463,7 @@ header {
 }
 
 .feedback__property {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
@@ -1381,7 +1486,7 @@ header {
 }
 
 .bigHeading__title {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
@@ -1414,7 +1519,7 @@ header {
 }
 
 .Services__title__item {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -1449,7 +1554,7 @@ header {
 .Services__content {
   padding: 30px 50px;
   background: rgba(255, 255, 255, 0.59);
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
 }
 
 .Services__content.active {
@@ -1463,7 +1568,7 @@ header {
 }
 
 .Services__itemContent__title {
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1515,7 +1620,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -1571,7 +1676,7 @@ header {
 
 .quality__topButton {
   border-radius: 0px 30px;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -1593,6 +1698,11 @@ header {
   display: flex;
   margin: 0 -10px;
   margin-top: 25px;
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .quality__bottomButton {
@@ -1857,6 +1967,32 @@ sup {
   text-transform: uppercase;
 }
 
+.swiper {
+  width: 100%;
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+.gallery__dots {
+  position: relative;
+  padding: 58px 0 53px;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #C0BEBA;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: rgba(73, 70, 67, 0.46);
+}
+
 .footer {
   padding: 45px 0 55px 0;
   -webkit-box-pack: justify;
@@ -1891,7 +2027,7 @@ sup {
 
 .footer__title {
   padding-top: 16px;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -1900,7 +2036,7 @@ sup {
 
 .footer__description {
   max-width: 358px;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1940,7 +2076,7 @@ sup {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Raleway';
+  font-family: "Libre Franklin";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
