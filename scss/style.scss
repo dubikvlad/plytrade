@@ -60,7 +60,7 @@ $Raleway: 'Raleway';
     font-weight: bold;
     /* Браузер сначала попробует найти шрифт локально */
     src: local("Libre Franklin"),
-         url("http://politotreyd.by/wp-content/themes/polytrade/assets/fonts/libre-franklin/librefranklin-extrabold.woff") format("woff"),
+         url("http://politotreyd.by/wp-content/themes/polytrade/assets/fonts/libre-new-woff/librefranklin-extrabold.woff") format("woff"),
 }
 
 
@@ -735,6 +735,7 @@ header {
 
 .processing__block {
     display: flex;
+    justify-content: flex-end;
     &:nth-child(2n) {
         flex-direction: row-reverse;
         margin-top: 20px;
@@ -750,15 +751,33 @@ header {
             flex-direction: column;
         } 
     }
+
+    &:not(:first-child) {
+        .processing__preview__img {
+            &:first-child {
+                display: block;
+            }
+            &.last-active {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 .processing__preview {
-    width: 50%;
+    width: 537px;
     max-height: 537px;
+    border-radius: 60px;
+    overflow: hidden;
+
     @media screen and(max-width: 875px) {
         width: 100%;
         padding-bottom: 20px;
     }
+    
 }
 
 .processing__preview__img {
@@ -769,6 +788,11 @@ header {
     &.active {
         display: block;
     }
+    &:last-child {
+        &.last-active {
+            display: block;
+        }
+    }
 }
 
 .processing__links {
@@ -776,6 +800,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: -32px 0;
     @media screen and(max-width: 875px) {
         margin: -15px 0;
@@ -796,6 +821,7 @@ header {
     border-radius: 0px 15px;
     height: 70px;
     max-width: 446px;
+    width: 100%;
     
     font-family: 'Chalkboard SE';
     font-style: normal;
@@ -1819,5 +1845,9 @@ sup {
         // &:last-child {
         //     margin-bottom: 0;
         // }
+    }
+
+    img {
+        height: 39px;
     }
 }

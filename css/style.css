@@ -44,7 +44,7 @@
   font-style: normal;
   font-weight: bold;
   /* Браузер сначала попробует найти шрифт локально */
-  src: local("Libre Franklin"), url("http://politotreyd.by/wp-content/themes/polytrade/assets/fonts/libre-franklin/librefranklin-extrabold.woff") format("woff");
+  src: local("Libre Franklin"), url("http://politotreyd.by/wp-content/themes/polytrade/assets/fonts/libre-new-woff/librefranklin-extrabold.woff") format("woff");
 }
 
 @-webkit-keyframes slideme {
@@ -897,6 +897,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .processing__block:nth-child(2n) {
@@ -926,9 +929,23 @@ header {
   }
 }
 
+.processing__block:not(:first-child) .processing__preview__img:first-child {
+  display: block;
+}
+
+.processing__block:not(:first-child) .processing__preview__img.last-active {
+  display: none;
+}
+
+.processing__block:not(:first-child) .processing__preview__img.last-active.active {
+  display: block;
+}
+
 .processing__preview {
-  width: 50%;
+  width: 537px;
   max-height: 537px;
+  border-radius: 60px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 875px) {
@@ -950,6 +967,10 @@ header {
   display: block;
 }
 
+.processing__preview__img:last-child.last-active {
+  display: block;
+}
+
 .processing__links {
   width: 50%;
   display: -webkit-box;
@@ -962,6 +983,9 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: -32px 0;
 }
 
@@ -991,6 +1015,7 @@ header {
   border-radius: 0px 15px;
   height: 70px;
   max-width: 446px;
+  width: 100%;
   font-family: 'Chalkboard SE';
   font-style: normal;
   font-weight: 700;
@@ -2091,5 +2116,9 @@ sup {
   font-size: 14px;
   line-height: 14px;
   margin: 12px 0;
+}
+
+.footer__menu__item img {
+  height: 39px;
 }
 /*# sourceMappingURL=style.css.map */

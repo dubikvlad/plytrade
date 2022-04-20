@@ -6,7 +6,6 @@ let first = new IsVisibleBlock('.processing', '.processing__links__link');
 
 window.addEventListener('scroll', function() {
   let first = new IsVisibleBlock('.processing', '.processing__links__link');
-  let second = new IsVisibleBlock('.processing__block', '.processing__preview__img');
 });
 
 function IsVisibleBlock (firstBlockSelector, secondarySelector) {
@@ -41,6 +40,8 @@ function IsVisibleBlock (firstBlockSelector, secondarySelector) {
 
 };
 
+const images = document.querySelectorAll('.processing__preview__img');
+
 function showHideTextInScrollingBlock(imageBlock, secondarySelector) {
     const blockHeight = imageBlock.getBoundingClientRect().height;
     const textInScrollingImage = imageBlock.querySelectorAll(secondarySelector); //находим в блоке нужные блоки с текстом
@@ -56,7 +57,7 @@ function showHideTextInScrollingBlock(imageBlock, secondarySelector) {
     for (let i = 0; i < textConter; i++) {
   
       let text = textInScrollingImage[i];
-
+      let image = images[i];
   
       const textPosition = {
         top: window.pageYOffset + imageBlock.getBoundingClientRect().top + heightForOneText * i + 360, // верх промежутка, где показыватеся текст
@@ -70,19 +71,44 @@ function showHideTextInScrollingBlock(imageBlock, secondarySelector) {
       
       if (textPosition.bottom > windowPosition.top &&
           textPosition.top < windowPosition.bottom) {
-          textInScrollingImage.forEach(element => {
+          textInScrollingImage.forEach((element,i) => {
             element.classList.remove('active');
+            hideImages();
           });
           text.classList.add('last-active');
           text.classList.add('active');
+          // showImage(i);
+          image.classList.add('last-active');
+          image.classList.add('active');
       } 
 
       else if (textPosition.bottom > windowPosition.top) {
         text.classList.remove('last-active');
+        image.classList.remove('last-active');
       }
       
       else {
         text.classList.remove('active');
+        // hideImage(i);
+        image.classList.remove('active');
       }
     }
   }
+
+
+
+// function showImage(currentIndex) {
+//   let i = currentIndex;
+//   images[i].classList.add('active');
+// }
+
+// function hideImage(currentIndex) {
+//   let i = currentIndex;
+//   images[i].classList.remove('active');
+// }
+
+function hideImages() {
+  images.forEach(element => {
+    element.classList.remove('active');
+  });
+}
