@@ -1,34 +1,17 @@
-// const swiper = new Swiper('.swiper', {
-//     // Optional parameters
-//     // direction: 'vertical',
-//     loop: true,
-  
-//     // If we need pagination
-//     pagination: {
-//       el: '.swiper-pagination',
-//     },
-  
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-  
-//     // And if we need scrollbar
-//     scrollbar: {
-//       el: '.swiper-scrollbar',
-//     },
-// });
-
 const scrollingImages = document.querySelectorAll('.processing');
 
-isVisibleBlock (scrollingImages);
+
+
+let first = new IsVisibleBlock('.processing', '.processing__links__link');
 
 window.addEventListener('scroll', function() {
-    isVisibleBlock (scrollingImages);
+  let first = new IsVisibleBlock('.processing', '.processing__links__link');
+  let second = new IsVisibleBlock('.processing__block', '.processing__preview__img');
 });
 
-function isVisibleBlock (targets) {
+function IsVisibleBlock (firstBlockSelector, secondarySelector) {
+
+  const targets = document.querySelectorAll(firstBlockSelector, secondarySelector);
 // Все позиции элемента
     targets.forEach( (target)=> {
         let targetPosition = {
@@ -48,7 +31,7 @@ function isVisibleBlock (targets) {
         // Если элемент полностью видно, то запускаем следующий код
         // console.clear();
         // console.log('Вы видите элемент :)');
-        showHideTextInScrollingBlock(target);
+        showHideTextInScrollingBlock(target, secondarySelector);
         
         } else {
         // Если элемент не видно, то запускаем этот код
@@ -58,9 +41,9 @@ function isVisibleBlock (targets) {
 
 };
 
-function showHideTextInScrollingBlock(imageBlock) {
+function showHideTextInScrollingBlock(imageBlock, secondarySelector) {
     const blockHeight = imageBlock.getBoundingClientRect().height;
-    const textInScrollingImage = imageBlock.querySelectorAll('.processing__links__link'); //находим в блоке нужные блоки с текстом
+    const textInScrollingImage = imageBlock.querySelectorAll(secondarySelector); //находим в блоке нужные блоки с текстом
     let textConter = ''; // сколько блоков нашло
 
   
