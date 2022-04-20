@@ -276,7 +276,7 @@
                                     <div class="quality__line">
                                         <div class="quality__description">
                                             <div class="quality__description__title">
-                                                <div class="quality__description__picture"><img src="http://politotreyd.by/wp-content/uploads/2022/04/quality1.png" alt=""></div>
+                                                <div class="quality__description__picture"><img src="/img/quality1.png" alt=""></div>
                                                 <span>Технология</span>
                                             </div>
                                             <div class="quality__description__text">
@@ -319,7 +319,7 @@
                                     <div class="quality__line">
                                         <div class="quality__description">
                                             <div class="quality__description__title">
-                                                <div class="quality__description__picture"><img src="http://politotreyd.by/wp-content/uploads/2022/04/quality1.png" alt=""></div>
+                                                <div class="quality__description__picture"><img src="/img/quality1.png" alt=""></div>
                                                 <span>Технология</span>
                                             </div>
                                             <div class="quality__description__text">
@@ -364,6 +364,7 @@
                                         <div class="quality__description">
                                             <div class="quality__description__title">
                                                 <div class="quality__description__picture"><img src="http://politotreyd.by/wp-content/uploads/2022/04/quality1.png" alt=""></div>
+                                                <div class="quality__description__picture"><img src="/img/quality1.png" alt=""></div>
                                                 <span>Технология</span>
                                             </div>
                                             <div class="quality__description__text">
@@ -747,3 +748,19 @@
     <script src="swiper-set.js"></script>
 </body>
 </html>
+
+<script src="js.js"></script>
+
+<script>
+    var swiper = new Swiper(".gallery__slider", {
+      slidesPerView: 3,
+      spaceBetween: 90,
+      slidesPerGroup: 3,
+      loop: true,
+    //   loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
