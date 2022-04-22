@@ -1,8 +1,9 @@
 const scrollingImages = document.querySelectorAll('.processing');
 
-
-
 let first = new IsVisibleBlock('.processing', '.processing__links__link');
+let tabs = new Tabs('.Services','.Services__title__item', '.Services__itemContent');
+
+let projectTabs = new Tabs('.projects','.example__tab', '.examples__galerySales');
 
 window.addEventListener('scroll', function() {
   let first = new IsVisibleBlock('.processing', '.processing__links__link');
@@ -111,4 +112,79 @@ function hideImages() {
   images.forEach(element => {
     element.classList.remove('active');
   });
+}
+
+function Tabs(mainBlocks, tabClass, tabContentClass, dropTitle, content, dropTitleText, contentText) {
+  //******************* обязательно ***********************/
+  //*****принимает пути: 0 - блок/блоки, где хранится(ятся) таб(ы) 1 - вкладки, 2 - блоки с контентом вкладок, */
+  //********************если имеются **********************/
+  //**  3 - кнопка активации выпадающего меню со вкладками, 4 - блок в котором находятся вкладки, 5 - текст кнопки активации выпадающего меню  6 - текст вкладок  */
+    const blocks = document.querySelectorAll(mainBlocks);
+
+    blocks.forEach(element => {
+      
+      
+      const tabs = element.querySelectorAll(tabClass);
+      const tabsContent = element.querySelectorAll(tabContentClass);
+
+      const title = element.querySelector(dropTitle);
+      const menu = element.querySelector(content);
+      
+      const titleText = element.querySelector(dropTitleText);
+      const menuText = element.querySelectorAll(contentText);
+
+      if(isThere(title) && isThere (menu)){
+        title.onclick = () => {
+            menu.classList.toggle("active");  
+        }
+        document.onclick = (e) => {
+            let target = e.target.closest(dropTitle);
+
+            if(!target) {
+                removeClassActive(menu);
+                return;
+            }
+          }
+        }    
+
+      tabs.forEach((tab, i) => {
+        tab.onclick = () => {
+          tabs.forEach((element, i) => {
+              removeClassActive(element)                
+              removeClassActive(tabsContent[i]);                              
+          })
+          addClassActive(tab)
+          addClassActive(tabsContent[i]);
+
+          if(isThere(titleText) && isThere(menuText)) {
+              titleText.textContent = menuText[i].textContent;
+          }
+
+          // ******доп элемент**************
+
+          // ******конец доп элемента********
+        }
+
+      });
+    });
+
+    
+    
+}
+
+function addClassActive(el) {
+    el.classList.add("active");
+}
+
+function removeClassActive(el) {
+    el.classList.remove("active");
+}
+
+function isThere(el) {
+    if(el == undefined || el == null) {
+        return(false);
+    }
+    else {
+        return(true);
+    }
 }

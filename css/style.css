@@ -1599,6 +1599,14 @@ header {
           flex-direction: column;
 }
 
+.Services__itemContent {
+  display: none;
+}
+
+.Services__itemContent.active {
+  display: block;
+}
+
 .Services__itemContent__title {
   font-family: "Libre Franklin", "Raleway", sans-serif;
   font-style: normal;
@@ -1621,6 +1629,13 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.Services__itemWrapper:nth-child(2n + 1) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .Services__itemPicture {
@@ -1784,6 +1799,25 @@ header {
   margin-bottom: 70px;
 }
 
+.examples__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -10px;
+}
+
+.example__tab {
+  margin: 10px;
+  padding: 8px 15px;
+  background: rgba(189, 189, 188, 0.49);
+  border-radius: 0px 5px;
+  cursor: pointer;
+}
+
+.example__tab.active {
+  background: rgba(73, 215, 66, 0.85);
+}
+
 .examples__intro__text {
   padding: 40px 30px 45px;
   max-width: 680px;
@@ -1873,6 +1907,16 @@ header {
   left: 0;
 }
 
+.projects .examples__galerySales {
+  display: none;
+}
+
+.projects .examples__galerySales.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .examples__card {
   height: 360px;
 }
@@ -1897,6 +1941,10 @@ header {
   color: rgba(73, 215, 66, 0.85);
 }
 
+.projects .examples__cardSales {
+  height: auto;
+}
+
 sup {
   vertical-align: super;
   font-size: 0.7em;
@@ -1913,6 +1961,20 @@ sup {
   color: #FFFFFF;
 }
 
+.projects .examples__text {
+  text-align: left;
+  padding-left: 70px;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.projects .examples__text::before {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  content: url("http://politotreyd.by/wp-content/uploads/2022/04/area-2-1.png");
+}
+
 .examples__text .size {
   font-family: "Raleway";
   font-size: 0.7em;
@@ -1921,6 +1983,10 @@ sup {
 .examples__picture {
   width: 100%;
   height: 278px;
+}
+
+.projects .examples__picture {
+  height: 312px;
 }
 
 .examples__card__img {
