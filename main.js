@@ -149,9 +149,9 @@ function Tabs(mainBlocks, tabClass, tabContentClass, dropTitle, content, dropTit
 
       tabs.forEach((tab, i) => {
         tab.onclick = () => {
-          tabs.forEach((element, i) => {
+          tabs.forEach((element, j) => {
               removeClassActive(element)                
-              removeClassActive(tabsContent[i]);                              
+              removeClassActive(tabsContent[j]);                              
           })
           addClassActive(tab)
           addClassActive(tabsContent[i]);
@@ -159,10 +159,68 @@ function Tabs(mainBlocks, tabClass, tabContentClass, dropTitle, content, dropTit
           if(isThere(titleText) && isThere(menuText)) {
               titleText.textContent = menuText[i].textContent;
           }
+        }
 
-          // ******доп элемент**************
+      });
+    });
 
-          // ******конец доп элемента********
+    
+    
+}
+
+let customtabs = new CustomTabs('.Services__itemWrapper', '.Services__itemList li', '.Services__itemPicture')
+
+function CustomTabs(mainBlocks, tabClass, tabContentClass, dropTitle, content, dropTitleText, contentText) {
+  //******************* обязательно ***********************/
+  //*****принимает пути: 0 - блок/блоки, где хранится(ятся) таб(ы) 1 - вкладки, 2 - блоки с контентом вкладок, */
+  //********************если имеются **********************/
+  //**  3 - кнопка активации выпадающего меню со вкладками, 4 - блок в котором находятся вкладки, 5 - текст кнопки активации выпадающего меню  6 - текст вкладок  */
+    const blocks = document.querySelectorAll(mainBlocks);
+
+    blocks.forEach(element => {
+      
+      
+      const tabs = element.querySelectorAll(tabClass);
+      const tabsContent = element.querySelectorAll(tabContentClass);
+
+      const title = element.querySelector(dropTitle);
+      const menu = element.querySelector(content);
+      
+      const titleText = element.querySelector(dropTitleText);
+      const menuText = element.querySelectorAll(contentText);
+
+      // if(isThere(title) && isThere (menu)){
+      //   title.onclick = () => {
+      //       menu.classList.toggle("active");  
+      //   }
+      //   document.onclick = (e) => {
+      //     let target = e.target.closest(dropTitle);
+
+      //     if(!target) {
+      //         removeClassActive(menu);
+      //         return;
+      //     }
+      //   }
+      // }    
+
+      tabs.forEach((tab, i) => {
+        tab.onclick = () => {
+          tabs.forEach((element, i) => {
+            removeClassActive(element);                
+            removeClassActive(tabsContent[i]); 
+            element.classList.remove("pre-active");                             
+          })
+          addClassActive(tab)
+          addClassActive(tabsContent[i]);
+
+          for (let index = 0; index < i; index++) {
+            const element = tabs[index];
+            element.classList.add("pre-active");
+          }
+
+          // if(isThere(titleText) && isThere(menuText)) {
+          //     titleText.textContent = menuText[i].textContent;
+          // }
         }
 
       });

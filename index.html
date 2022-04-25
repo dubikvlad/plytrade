@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <div class="container ">
+        <div class="container">
             <div class="header">
                 <div class="header__logo">
                     <a href="#">
@@ -201,6 +201,42 @@
                                 хочу дом!
                             </a>
                         </div>
+                        <!--  -->
+
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.js">
+
+
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lightgallery.css">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-zoom.css">
+                        
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/css/lg-fullscreen.css">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+
+                        <!--  -->
+                        <div class="galleryHidden" id="gallery">
+                            <a href="http://politotreyd.by/wp-content/uploads/2022/04/house004.png">]
+                                <img src="http://politotreyd.by/wp-content/uploads/2022/04/house004.png" alt="">
+                            </a>
+                            <a href="http://politotreyd.by/wp-content/uploads/2022/04/house005.png">
+                                <img src="http://politotreyd.by/wp-content/uploads/2022/04/house005.png" alt="">
+                            </a>
+                        </div>
+                        <!-- **************************** -->
+                        <!-- <script src="https://unpkg.com/browse/lightgallery@2.4.0/lightgallery.min.js"></script> -->
+                        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.3/lightgallery.umd.js"></script>
+                        <!-- **************************** -->
+
+                        <script>
+                            const container = document.getElementById("gallery");
+
+                            lightGallery(container, {
+                                speed: 500
+                                
+                            });
+                        </script>
+
                         <div class="examples__cardSales">
                             <div class="examples__picture">
                                 <img class="examples__card__img" src="http://politotreyd.by/wp-content/uploads/2022/04/house005.png" alt="дом">
@@ -601,61 +637,73 @@
                 <div class="Slice gallery">
                     <div class="gallery__slider swiper">
                         <div class="swiper-wrapper">
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
-                                </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 1</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
-                                </div>
-                            </div>
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
-                                </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 2</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 1</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
-                                </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 3</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 2</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
-                                </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 4</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 3</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
-                                </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 5</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 4</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="gallery__item swiper-slide">
-                                <div class="gallery__picture">
-                                    <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 5</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
-                                <div class="gallery__info">
-                                    <span class="gallery__info__name">Имя клиента 6</span>
-                                    <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                            </div>
+
+                            <div class="gallery__itemWrap swiper-slide">
+                                <div class="gallery__item">
+                                    <div class="gallery__picture">
+                                        <img src="http://politotreyd.by/wp-content/uploads/2022/04/person.jpg" alt="" class="gallery__picture__img">
+                                    </div>
+                                    <div class="gallery__info">
+                                        <span class="gallery__info__name">Имя клиента 6</span>
+                                        <a href="" class="gallery__info__link">смотреть видео отзыв</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
